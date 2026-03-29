@@ -11,7 +11,7 @@ app.use(express.static(join(__dirname, 'dist'), {
   etag: true,
 }));
 
-app.get('*', (_req, res) => {
+app.get('/{*splat}', (_req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
