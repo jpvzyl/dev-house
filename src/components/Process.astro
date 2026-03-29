@@ -1,0 +1,147 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Discovery & Architecture',
+    desc: 'Deep-dive into requirements, constraints, and opportunities. Technical architecture design, stack selection, and a concrete project roadmap before a line of code is written.',
+  },
+  {
+    num: '02',
+    title: 'Engineering Sprint',
+    desc: 'Focused development cycles with continuous integration. Weekly demos, transparent progress tracking, and the flexibility to adapt as we learn more about the problem.',
+  },
+  {
+    num: '03',
+    title: 'Quality & Security',
+    desc: 'Automated test suites (Playwright, RSpec, pytest), security scanning, thorough code review, and performance optimisation. Nothing ships without passing the bar.',
+  },
+  {
+    num: '04',
+    title: 'Deploy & Evolve',
+    desc: 'Production deployment with monitoring, documentation, and knowledge transfer. Your code, your infrastructure, your intellectual property — with ongoing support if you need it.',
+  },
+];
+---
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Process</span>
+      <h2 class="section-title">How We Work</h2>
+      <p class="section-subtitle">
+        Rigorous engineering process, transparent communication,
+        and full ownership of everything we build for you.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      {steps.map((step, i) => (
+        <div class="process-step" data-animate data-delay={String(i + 1)}>
+          <div class="step-num-wrap">
+            <span class="step-num">{step.num}</span>
+            {i < steps.length - 1 && <div class="step-connector" />}
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-desc">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+  }
+
+  .step-num-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    background-image: var(--accent-gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .step-connector {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 32px);
+    right: calc(-50% + 32px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-hover), var(--border));
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .step-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 900px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .process-step {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 0;
+    }
+
+    .step-num-wrap {
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    .step-connector {
+      display: none;
+    }
+  }
+</style>

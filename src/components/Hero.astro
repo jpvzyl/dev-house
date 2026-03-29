@@ -1,0 +1,270 @@
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-badge" data-animate>
+      <span class="badge-pulse"></span>
+      Full-Spectrum Software Engineering
+    </div>
+
+    <h1 data-animate data-delay="1">
+      We Engineer<br />
+      <span class="gradient-text">What Others Can't</span>
+    </h1>
+
+    <p class="hero-sub" data-animate data-delay="2">
+      From quantum computing and AI to production-grade enterprise platforms &mdash;
+      deep engineering expertise for organisations that demand excellence.
+      Not agencies. Engineers.
+    </p>
+
+    <div class="hero-actions" data-animate data-delay="3">
+      <a href="#contact" class="btn btn-primary">
+        Start a Conversation
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#services" class="btn btn-secondary">Explore Capabilities</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stats-bar" data-animate data-delay="4">
+      <div class="stat">
+        <span class="stat-value">15+</span>
+        <span class="stat-label">Production Systems</span>
+      </div>
+      <div class="stat-line"></div>
+      <div class="stat">
+        <span class="stat-value">9</span>
+        <span class="stat-label">Technology Domains</span>
+      </div>
+      <div class="stat-line"></div>
+      <div class="stat">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Core Languages</span>
+      </div>
+      <div class="stat-line"></div>
+      <div class="stat">
+        <span class="stat-value">&infin;</span>
+        <span class="stat-label">Quantum&thinsp;&rarr;&thinsp;Mobile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 7rem 0 3rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.1;
+    animation: drift 30s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 700px;
+    height: 700px;
+    background: var(--accent-indigo);
+    top: -300px;
+    right: -250px;
+  }
+
+  .orb-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-violet);
+    bottom: -200px;
+    left: -200px;
+    animation-delay: -10s;
+  }
+
+  .orb-3 {
+    width: 350px;
+    height: 350px;
+    background: var(--accent-cyan);
+    top: 35%;
+    left: 45%;
+    animation-delay: -20s;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(50px, -50px) scale(1.06); }
+    66% { transform: translate(-40px, 40px) scale(0.94); }
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(99, 102, 241, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .badge-pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-indigo);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.5); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 8vw, 5.25rem);
+    font-weight: 800;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-sub {
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding: 2rem 3rem;
+    background: rgba(14, 14, 22, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--accent-gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .stat-line {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .stats-bar {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    .stat-line {
+      display: none;
+    }
+
+    .stat {
+      width: 40%;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

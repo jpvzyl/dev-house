@@ -1,0 +1,126 @@
+---
+const categories = [
+  {
+    name: 'Languages',
+    items: ['Python', 'Ruby', 'Rust', 'TypeScript', 'JavaScript'],
+  },
+  {
+    name: 'Frontend',
+    items: ['React', 'Next.js', 'Vite', 'Tailwind CSS', 'Radix UI'],
+  },
+  {
+    name: 'Backend',
+    items: ['Ruby on Rails', 'FastAPI', 'Django', 'Axum', 'Express', 'AdonisJS'],
+  },
+  {
+    name: 'Mobile',
+    items: ['React Native', 'Expo', 'iOS', 'Android'],
+  },
+  {
+    name: 'AI & Machine Learning',
+    items: ['Anthropic Claude', 'OpenAI', 'LangChain', 'AWS Rekognition', 'Computer Vision'],
+  },
+  {
+    name: 'Quantum',
+    items: ['Qiskit', 'PennyLane', 'AWS Braket', 'D-Wave Ocean', 'QUBO/BQM'],
+  },
+  {
+    name: 'Data & Storage',
+    items: ['PostgreSQL', 'Redis', 'PostGIS', 'SQLAlchemy', 'ActiveRecord'],
+  },
+  {
+    name: 'Infrastructure',
+    items: ['AWS', 'Docker', 'Heroku', 'Vercel', 'CI/CD', 'GitHub Actions'],
+  },
+];
+---
+
+<section class="section" id="technology">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Technology</span>
+      <h2 class="section-title">Battle-Tested Stack</h2>
+      <p class="section-subtitle">
+        Every technology in our arsenal has been validated across production systems.
+        No experiments &mdash; proven tools, proven results.
+      </p>
+    </div>
+
+    <div class="tech-grid">
+      {categories.map((cat, i) => (
+        <div class="tech-category" data-animate data-delay={String(Math.min(i + 1, 6))}>
+          <h3 class="tech-cat-title">{cat.name}</h3>
+          <div class="tech-pills">
+            {cat.items.map(item => (
+              <span class="tech-pill">{item}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tech-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all var(--transition);
+  }
+
+  .tech-category:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+  }
+
+  .tech-cat-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-pill {
+    padding: 0.35rem 0.85rem;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+
+  .tech-category:hover .tech-pill {
+    border-color: rgba(99, 102, 241, 0.2);
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 1024px) {
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
