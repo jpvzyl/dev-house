@@ -1,0 +1,158 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="hero-eyebrow" data-animate>Full-Spectrum Software Engineering</p>
+      <h1 data-animate data-delay="1">
+        We engineer what<br/>others <em>can't.</em>
+      </h1>
+      <p class="hero-sub" data-animate data-delay="2">
+        From quantum computing and AI to production-grade enterprise
+        platforms &mdash; deep engineering expertise for organisations
+        that demand excellence.
+      </p>
+      <div class="hero-actions" data-animate data-delay="3">
+        <a href="#contact" class="btn btn-primary">
+          Start a Conversation
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#services" class="btn btn-outline">Our Capabilities</a>
+      </div>
+    </div>
+    <div class="hero-aside" data-animate data-delay="2">
+      <div class="aside-card">
+        <div class="aside-row">
+          <span class="aside-number">15+</span>
+          <span class="aside-label">Production Systems Delivered</span>
+        </div>
+        <div class="aside-divider"></div>
+        <div class="aside-row">
+          <span class="aside-number">9</span>
+          <span class="aside-label">Technology Domains</span>
+        </div>
+        <div class="aside-divider"></div>
+        <div class="aside-row">
+          <span class="aside-number">6</span>
+          <span class="aside-label">Core Programming Languages</span>
+        </div>
+        <div class="aside-divider"></div>
+        <div class="aside-row">
+          <span class="aside-number">&infin;</span>
+          <span class="aside-label">Quantum to Mobile Coverage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 5rem;
+    background: var(--bg);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-bright);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .aside-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem 2.25rem;
+  }
+
+  .aside-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.75rem 0;
+  }
+
+  .aside-row:first-child { padding-top: 0; }
+  .aside-row:last-child { padding-bottom: 0; }
+
+  .aside-number {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .aside-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .aside-divider {
+    height: 1px;
+    background: var(--border);
+  }
+
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero { padding: 7rem 0 3rem; min-height: auto; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

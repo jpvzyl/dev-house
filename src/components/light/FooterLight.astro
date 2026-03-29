@@ -1,0 +1,74 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <span class="footer-brand">DevHouse</span>
+      <p class="footer-tag">Full-spectrum software engineering.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#technology">Technology</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="/" class="footer-alt">Dark Theme &rarr;</a>
+    </div>
+    <p class="footer-copy">&copy; {new Date().getFullYear()} DevHouse. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 2rem;
+    background: var(--bg-surface);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .footer-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  .footer-tag {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+
+  .footer-alt {
+    color: var(--accent-bright) !important;
+    font-weight: 600 !important;
+  }
+
+  .footer-copy {
+    width: 100%;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+  }
+</style>

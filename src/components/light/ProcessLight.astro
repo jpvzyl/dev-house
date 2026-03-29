@@ -1,0 +1,124 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Discovery & Architecture',
+    desc: 'Deep-dive into requirements, constraints, and opportunities. Technical architecture design, stack selection, and a concrete project roadmap before a line of code is written.',
+  },
+  {
+    num: '02',
+    title: 'Engineering Sprint',
+    desc: 'Focused development cycles with continuous integration. Weekly demos, transparent progress tracking, and the flexibility to adapt as we learn more about the problem.',
+  },
+  {
+    num: '03',
+    title: 'Quality & Security',
+    desc: 'Automated test suites (Playwright, RSpec, pytest), security scanning, thorough code review, and performance optimisation. Nothing ships without passing the bar.',
+  },
+  {
+    num: '04',
+    title: 'Deploy & Evolve',
+    desc: 'Production deployment with monitoring, documentation, and knowledge transfer. Your code, your infrastructure, your intellectual property — with ongoing support if you need it.',
+  },
+];
+---
+
+<hr class="section-divider" />
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="process-header" data-animate>
+      <span class="section-eyebrow">Process</span>
+      <h2 class="section-title">How We Work</h2>
+      <p class="section-subtitle">
+        Rigorous engineering process, transparent communication,
+        and full ownership of everything we build for you.
+      </p>
+    </div>
+
+    <div class="timeline">
+      {steps.map((step, i) => (
+        <div class="timeline-item" data-animate data-delay={String(i + 1)}>
+          <div class="timeline-marker">
+            <span class="timeline-num">{step.num}</span>
+            {i < steps.length - 1 && <div class="timeline-line" />}
+          </div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">{step.title}</h3>
+            <p class="timeline-desc">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .timeline {
+    max-width: 640px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+  }
+
+  .timeline-num {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-bright);
+    background: var(--bg);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-line {
+    width: 1.5px;
+    flex: 1;
+    background: var(--border);
+    min-height: 24px;
+  }
+
+  .timeline-content {
+    padding-bottom: 2.5rem;
+  }
+
+  .timeline-item:last-child .timeline-content {
+    padding-bottom: 0;
+  }
+
+  .timeline-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    padding-top: 0.7rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+</style>
